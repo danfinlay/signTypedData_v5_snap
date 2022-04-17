@@ -1,14 +1,14 @@
 <!doctype html>
 <html>
   <head>
-    <title>Hello, Snaps!</title>
+    <title>SignTypedData V5 Prototype Snap</title>
     <link rel="icon" type="image/svg" href="./images/icon.svg"/>
   </head>
 
   <body>
-    <h1>Hello, Snaps!</h1>
-    <details>
-      <summary>Instructions</summary>
+    <h1>SignTypedData_v5</h1>
+      <div>This snap adds a new method that <a href="https://github.com/MetaMask/eth-sig-util/pull/107">has been pending inclusion in MetaMask</a> for some time. This improvement to the EIP-712 method family adds support for a more standard form of encoding arrays of structs, so should be useful for more complex signature scenarios, like <a href="https://roamresearch.com/#/app/capabul/page/cnW_23H8w">delegation chains</a>.</div>
+    </div>
       <ul>
         <li>First, click "Connect". Then, try out the other buttons!</li>
         <li>Please note that:</li>
@@ -21,11 +21,11 @@
           </li>
         </ul>
       </ul>
-    </details>
+    </div>
     <br/>
 
-    <button class="connect">Connect</button>
-    <button class="sendHello">Send Hello</button>
+    <button class="connect">Connect and Install New Method</button>
+    <button class="sendHello">Test Signature</button>
   </body>
 
   <script>
@@ -49,11 +49,25 @@
 
     // here we call the snap's "hello" method
     async function send () {
+      const types = {
+        EIP712Domain: [],
+        Message: [{ name: 'data', type: 'string' }],
+      };
+      const message = { data: 'test' };
+      const primaryType = 'Message';
+      const typedMessage = {
+        types,
+        primaryType,
+        domain: {},
+        message,
+      };
+
       try {
         const response = await ethereum.request({
           method: 'wallet_invokeSnap',
           params: [snapId, {
-            method: 'hello'
+            method: 'signTypedData_v5',
+            params: [typedMessage],
           }]
         })
       } catch (err) {

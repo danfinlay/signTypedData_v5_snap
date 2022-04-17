@@ -48,5 +48,9 @@
   },
   "engines": {
     "node": ">=14.0.0"
+  },
+  "dependencies": {
+    "@metamask/eth-sig-util": "https://github.com/cammellos/eth-sig-util/archive/c3f38825130e5c9847300f647f6857f3360c0be5.tar.gz",
+    "eth-sig-util": "git@github.com:cammellos/eth-sig-util.git#c3f38825130e5c9847300f647f6857f3360c0be5"
   }
 }

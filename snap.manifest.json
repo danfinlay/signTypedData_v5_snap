@@ -1,10 +1,10 @@
 {
   "version": "0.7.0",
-  "proposedName": "MetaMask Template Snap",
-  "description": "A MetaMask Snap template.",
+  "proposedName": "Sign Typed Data V5",
+  "description": "A somewhat more human readable way to sign data intened for Ethereum smart contracts.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/MetaMask/snap-template.git"
+    "url": "https://github.com/danfinlay/signTypedData_v5_snap"
   },
   "source": {
     "shasum": "ugRI+2ippw2w2gNSGWpvCRu5L1LD2j4FWQ+KcO/1dIE=",
@@ -12,13 +12,14 @@
       "npm": {
         "filePath": "dist/bundle.js",
         "iconPath": "images/icon.svg",
-        "packageName": "@metamask/template-snap",
+        "packageName": "signTypedData_v5_snap",
         "registry": "https://registry.npmjs.org/"
       }
     }
   },
   "initialPermissions": {
-    "snap_confirm": {}
+    "snap_confirm": {},
+    "snap_getBip44Entropy_60": {}
   },
   "manifestVersion": "0.1"
 }
