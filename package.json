@@ -1,10 +1,10 @@
 {
-  "name": "@metamask/template-snap",
+  "name": "signtypeddata-v5-snap",
   "version": "0.7.0",
-  "description": "The 'Hello, world!' of MetaMask Snaps.",
+  "description": "A snap for trying out a proposal for EIP-712 signTypedData_v5",
   "repository": {
     "type": "git",
-    "url": "https://github.com/MetaMask/snap-template.git"
+    "url": "https://github.com/danfinlay/signTypedData_v5_snap.git"
   },
   "license": "MIT",
   "main": "src/index.js",
@@ -50,7 +50,8 @@
     "node": ">=14.0.0"
   },
   "dependencies": {
-    "@metamask/eth-sig-util": "https://github.com/cammellos/eth-sig-util/archive/c3f38825130e5c9847300f647f6857f3360c0be5.tar.gz",
-    "eth-sig-util": "git@github.com:cammellos/eth-sig-util.git#c3f38825130e5c9847300f647f6857f3360c0be5"
+    "@metamask/key-tree": "^3.0.1",
+    "eth-sig-util": "^3.0.1",
+    "signtypeddata-v5": "^4.0.0"
   }
 }

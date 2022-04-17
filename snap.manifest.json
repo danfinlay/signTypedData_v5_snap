@@ -4,22 +4,22 @@
   "description": "A somewhat more human readable way to sign data intened for Ethereum smart contracts.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/danfinlay/signTypedData_v5_snap"
+    "url": "https://github.com/danfinlay/signTypedData_v5_snap.git"
   },
   "source": {
-    "shasum": "ugRI+2ippw2w2gNSGWpvCRu5L1LD2j4FWQ+KcO/1dIE=",
+    "shasum": "TF83EkG4bbbxjUueJrIjtBDdxV9+vTdlGRYrpEejsH8=",
     "location": {
       "npm": {
         "filePath": "dist/bundle.js",
         "iconPath": "images/icon.svg",
-        "packageName": "signTypedData_v5_snap",
+        "packageName": "signtypeddata-v5-snap",
         "registry": "https://registry.npmjs.org/"
       }
     }
   },
   "initialPermissions": {
-    "snap_confirm": {},
-    "snap_getBip44Entropy_60": {}
+    "snap_getBip44Entropy_60": {},
+    "snap_confirm": {}
   },
   "manifestVersion": "0.1"
 }
