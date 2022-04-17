@@ -1,7 +1,8 @@
-# @metamask/template-snap
+# SignTypedData_v5 Snap
 
-The "Hello, world!" of MetaMask Snaps, and also a GitHub template repository.
-For instructions, see [the MetaMask documentation](https://docs.metamask.io/guide/snaps.html).
+A snap designed to try out the fifth revision of EIP-712 signTypedData before it's supported in production wallets.
+
+For development instructions, see [the MetaMask documentation](https://docs.metamask.io/guide/snaps.html).
 
 ## Cloning
 
