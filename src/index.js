@@ -5,7 +5,7 @@ import {
   typedSignatureHash,
   SignTypedDataVersion,
 } from 'signtypeddata-v5';
-import { getBIP44AddressKeyDeriver } from '@metamask/key-tree';
+import { deriveBIP44AddressKey } from '@metamask/key-tree';
 
 wallet.registerRpcMessageHandler(async (originString, requestObject) => {
   switch (requestObject.method) {
@@ -32,15 +32,12 @@ wallet.registerRpcMessageHandler(async (originString, requestObject) => {
         method: 'snap_getBip44Entropy_60'
       });
 
-      console.log('we got a coin type node', coinTypeNode);
-      const addressKeyDeriver = getBIP44AddressKeyDeriver(coinTypeNode);
-      console.log('we have a deriver now', addressKeyDeriver);
-
-      // TODO: Extreme hack below here:
-      // Just working for address at index 0 for now:
-      // TODO: Figure out how to derive a 32 byte private key from these 64 bytes...
-      // For now gonna just slice it b/c I'm experimenting...
-      const privateKey = addressKeyDeriver(0).slice(0, 32);
+      // TODO: Just working for address at index 0 for now:
+      const privateKey = deriveBIP44AddressKey(coinTypeNode, {
+        account: 0,
+        change: 0,
+        address_index: 0,
+      }).slice(0, 32);
 
       const signature = signTypedData({
         privateKey,
