@@ -50,7 +50,7 @@
     "node": ">=14.0.0"
   },
   "dependencies": {
-    "@metamask/key-tree": "^3.0.1",
+    "@metamask/key-tree": "^5.0.2",
     "eth-sig-util": "^3.0.1",
     "signtypeddata-v5": "^4.0.0"
   }
